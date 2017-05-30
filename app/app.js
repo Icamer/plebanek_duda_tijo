@@ -1,10 +1,12 @@
+'use strict';
+
 function sortArray(array) {
     if (!Array.isArray(array)) {
         return false;
     }
-    if (array.length === 0)
+    if (array.length === 0) {
         return false;
-
+    }
     if (isNaN(array[0])) {
         return false;
     }
