@@ -1,29 +1,28 @@
-
-function sortArray (array)
-{
+function sortArray(array) {
     if (!Array.isArray(array)) {
         return false;
     }
-    if (array.length===0)
+    if (array.length === 0)
         return false;
 
-
-
-    for (var i = array.length -2; i>= 0; i--){
-        var arg = array[i];
-        if (isNaN(arg)){
-            return false;
-        }
-
-        var j = i + 1;
-        while ((j < array.length) && (arg > array[j]) ){
-            array[j-1] = array[j];
-            j++;
-        }
-        array[j-1] = arg;
+    if (isNaN(array[0])) {
+        return false;
     }
 
-    console.log(array);
+
+    for (var counter = 0; counter < array.length; counter++) {
+        if (isNaN(array[counter])) {
+            return false;
+        }
+        var tmp = array[counter];
+        var innerCounter = counter - 1;
+        while (innerCounter >= 0 && array[innerCounter] > tmp) {
+            array[innerCounter + 1] = array[innerCounter];
+            innerCounter--;
+        }
+
+        array[innerCounter + 1] = tmp;
+    }
     return array;
 }
 module.exports = {

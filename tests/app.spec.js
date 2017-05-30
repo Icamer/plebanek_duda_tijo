@@ -33,7 +33,7 @@ describe('sortArray', function ()
 
         it('should return true', function ()
         {
-            expect(app.sortArray([])).to.eql([]);
+            expect(app.sortArray([])).to.eql(false);
         });
     });
 
